@@ -10,7 +10,7 @@ void execmd(char **argv)
 {
 	char *cmd = NULL, *act_cmd = NULL;
 
-	if (argv)
+	if (argv && *argv)
 	{
 		/*get the command*/
 		cmd = argv[0];
@@ -21,6 +21,10 @@ void execmd(char **argv)
 		if (execve(act_cmd, argv, NULL) == -1)
 		{
 			perror("Error: ");
+		}
+		else
+		{
+			printf("command not found: %s\n", argv[0]);
 		}
 	}
 }

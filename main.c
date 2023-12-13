@@ -66,9 +66,11 @@ int main(int ac, char **argv)
 			token = strtok(NULL, dlm);
 		}
 		argv[i] = NULL;
-		printf("%s\n", lineptr);
+		/*execute command*/
+		execmd(argv);
 	}
 	free(lineptr);
+	free(lineptr_cpy);
 
 	return (0);
 }

@@ -1,21 +1,26 @@
 #include "main.h"
-#include <stdio.h>
-#include <unistd.h>
+
+/**
+ * execmd - Executes a command with the provided arguments.
+ *
+ * @argv: array of strings
+ */
 
 void execmd(char **argv)
 {
-    char *command = NULL, *actl_cmd = NULL;
+	char *cmd = NULL, *act_cmd = NULL;
 
-    if(argv)
-    {
-        command = argv[0];
+	if (argv)
+	{
+		/*get the command*/
+		cmd = argv[0];
 
-        actl_cmd = get_location(command);
+		act_cmd = get_location(cmd);
 
-        /* execute the actual command with execve */
-        if (execve(actl_cmd, argv, NULL) == -1)
-        {
-            perror("Error: ");
-        }
-    }
+		/*execute the actual command with execve*/
+		if (execve(act_cmd, argv, NULL) == -1)
+		{
+			perror("Error: ");
+		}
+	}
 }

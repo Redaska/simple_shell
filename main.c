@@ -15,6 +15,10 @@ int main(int ac, char **argv)
 	char *lineptr;
 	size_t n = 0;
 
+	/* declaring void variables for no error*/
+	(void)ac;
+	(void)argv;
+
 	printf("%s", prmpt);
 	getline(&lineptr, &n, stdin);
 

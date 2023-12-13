@@ -19,10 +19,14 @@ int main(int ac, char **argv)
 	(void)ac;
 	(void)argv;
 
-	printf("%s", prmpt);
-	getline(&lineptr, &n, stdin);
-	printf("%s\n", lineptr);
-
+	/*create infinite loop*/
+	while (1)
+	{
+		printf("%s", prmpt);
+		getline(&lineptr, &n, stdin);
+		printf("%s\n", lineptr);
+	}
 	free(lineptr);
+
 	return (0);
 }
